@@ -8,7 +8,7 @@ namespace CSharp9
         static void Main()
         {
             Program program = new();
-            program.Ornek1_1();
+            program.Ornek7_1();
         }
 
         //C# 9.0 İle Gelen Özellikler
@@ -177,6 +177,29 @@ namespace CSharp9
                 return null;
             }
         }
+
+        //Özellik 7
+        //Geliştirilmiş Operatörler
+        //Özellik 7.1
+        //C#8.0 ile birlikte «is» operatörü gelmişti ve değişkenin türünü kontrol etmemize olanak sağlıyordu.
+        //C#9.0 ile beraber ise «and,or, ve en önemlisi not» operatörü geldi.
+        //Örnek 7.1
+        public void Ornek7_1()
+        {
+            int birinciSayi = 7;
+            if (birinciSayi is > 5 and < 10)
+            {
+                Console.WriteLine("Birinci Sayı 5 ile 10 arasında"); //Ekrana Yazar
+            }
+
+            int ikinciSayi = 19;
+            if (ikinciSayi is > 100 or < 20)
+            {
+                Console.WriteLine("İkinci Sayı 20 den küçük veya 100 den büyük"); //Ekrana Yazar
+            }
+        }
+
+
 
     }
 }
