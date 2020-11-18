@@ -8,7 +8,7 @@ namespace CSharp9
         static void Main()
         {
             Program program = new();
-            program.Ornek7_1();
+            program.Ornek7_2();
         }
 
         //C# 9.0 İle Gelen Özellikler
@@ -196,6 +196,27 @@ namespace CSharp9
             if (ikinciSayi is > 100 or < 20)
             {
                 Console.WriteLine("İkinci Sayı 20 den küçük veya 100 den büyük"); //Ekrana Yazar
+            }
+        }
+        //Özellik 7.2
+        //Gelen not, or, and operatörleri diğer operatörler ile birleşebiliyor.
+        //Ornek 7.2
+        public bool IsLetter(char c)
+        {
+            return c is >= 'a' and <= 'z' or >= 'A' and <= 'Z';
+        }
+        public void Ornek7_2()
+        {
+            char karakter = 'M';
+            if (IsLetter(karakter))
+            {
+                Console.WriteLine($"{karakter} bir harftir."); //"M bir harftir" yazar.
+            }
+
+            char karakter2 = '#';
+            if (IsLetter(karakter2))
+            {
+                Console.WriteLine($"{karakter2} bir harftir."); //Çalışmaz
             }
         }
 
