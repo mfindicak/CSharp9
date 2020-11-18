@@ -14,6 +14,16 @@ namespace CSharp9
         //C# 9.0 İle Gelen Özellikler
         //Yazan: Mert Şen FINDICAK
 
+        // İçindekiler
+        //1. Records
+        //2. init
+        //3. with
+        //4. Top-level programs
+        //5. Target-typed New
+        //6. Convariant Returns
+        //7. Improved pattern matching
+        //8. Target-Typed Conditional Expression
+
         //Çıktı Üreten Metot Listesi
         //Ornek1_1(), Ornek1_2()
         //Ornek2_1()
@@ -107,7 +117,7 @@ namespace CSharp9
             Console.WriteLine($"İkinci Kayıt = {person3_1_2.FirstName} {person3_1_2.LastName}");
         }
 
-        //Özellik 4 - Standart(boilerplate) kodlardan arınma
+        //Özellik 4 - Standart(boilerplate) kodlardan arınma (Top-level programs)
         //Özellik 4.1/
         //C# 9.0 da boilerplate kodlar kullanmadan 
         //basit kodlarınızı bir main metodu içindeymiş gibi yazabilirsiniz.
@@ -132,7 +142,7 @@ namespace CSharp9
          */
 
 
-        //Özellik 5 - Hedefi anlayan new ifadesi
+        //Özellik 5 - Hedefi anlayan new ifadesi (5)
         //Özellik 5.1
         //Nesne oluştururken yeni ifadede tipini belirtmemize gerek kalmaz.
         //Örnek 5.1 (Çalıştırılabilir)
@@ -165,7 +175,7 @@ namespace CSharp9
             Array.ForEach(pointArray, element => Console.WriteLine(element.GetAll()));
         }
 
-        //Özellik 6
+        //Özellik 6 (Convariant Returns)
         //Override edilen metodun dönüş tipini daha spesifik bir dönüş tipiyle değiştirebiliriz.
         public abstract class Car
         {
@@ -180,7 +190,7 @@ namespace CSharp9
         }
 
         //Özellik 7
-        //Geliştirilmiş Operatörler
+        //Geliştirilmiş Operatörler (Improved pattern matching)
         //Özellik 7.1
         //C#8.0 ile birlikte «is» operatörü gelmişti ve değişkenin türünü kontrol etmemize olanak sağlıyordu.
         //C#9.0 ile beraber ise «and,or, ve en önemlisi not» operatörü geldi.
@@ -266,7 +276,21 @@ namespace CSharp9
             Console.WriteLine(whichTable(insan2)); //İkinci Masa
         }
 
+        //Özellik 8
+        //Hedef Tipli Koşullu İfade (Target-Typed Conditional Expression)
+        //Özellik 8.1
+        //C#9.0 koşullu ifadelerde hedef tipe çevirmemize gerek kalmaz ve 
+        //compiler bu işlemi arka planda otomatik olarak yapar.
+        public void Ornek8_1()
+        {
+            Person person = null;
 
+            //C#8.0 ve öncesi
+            int? x = person == null ? 0 : (int?)null;
+
+            //C#9.0
+            int? x2 = person == null ? 0 : null;
+        }
 
     }
 }
