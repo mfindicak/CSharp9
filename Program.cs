@@ -8,7 +8,7 @@ namespace CSharp9
         static void Main()
         {
             Program program = new();
-            program.Ornek7_3();
+            program.Ornek7_4();
         }
 
         //C# 9.0 İle Gelen Özellikler
@@ -19,6 +19,7 @@ namespace CSharp9
         //Ornek2_1()
         //Ornek3_1()
         //Ornek5_1()
+        //Ornek7_1(), Ornek7_2(), Ornek7_3(), Ornek7_4()
 
         //Özellik 1 - Records
         //Özellik 1.1
@@ -239,6 +240,30 @@ namespace CSharp9
                 ornek.ID = 10;
                 Console.WriteLine(ornek.ID); //10 Yazar
             }
+        }
+        //Ozellik 7.4
+        //Gelişmiş opeatörler ile switch kullanımı
+        //Örnek 7.4
+        public class Konser
+        {
+            public int ID { get; set; }
+            public string Name { get; set; }
+            public int TableNumber { get; set; }
+        }
+        public string whichTable(Konser k) =>
+            k.TableNumber switch
+            {
+                > 0 and <= 10 => "Birinci Masa",
+                > 0 and < 30 => "İkinci Masa",
+                _ => "Oturma yeriniz belli değil",
+            };
+        public void Ornek7_4()
+        {
+            Konser insan = new() { ID = 1, Name = "Mert" };
+            Console.WriteLine(whichTable(insan)); //Oturma yeriniz belli değil.
+
+            Konser insan2 = new() { ID = 2, Name = "Onur", TableNumber = 17 };
+            Console.WriteLine(whichTable(insan2)); //İkinci Masa
         }
 
 
