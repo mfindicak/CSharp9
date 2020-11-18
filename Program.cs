@@ -8,7 +8,7 @@ namespace CSharp9
         static void Main()
         {
             Program program = new();
-            program.Ornek7_2();
+            program.Ornek7_3();
         }
 
         //C# 9.0 İle Gelen Özellikler
@@ -217,6 +217,27 @@ namespace CSharp9
             if (IsLetter(karakter2))
             {
                 Console.WriteLine($"{karakter2} bir harftir."); //Çalışmaz
+            }
+        }
+        //Özellik 7.3
+        //Gelen not operatörü ile kolaylıkla değişken tipi ve null kontrolü yapılabilir.
+        //Ornek 7.3
+        public class Class7_3_1
+        {
+            public int ID { get; set; }
+        }
+        public void Ornek7_3()
+        {
+            Class7_3_1 ornek = null;
+            if (ornek is not null)
+            {
+                Console.WriteLine(ornek.ID);
+            }
+            else
+            {
+                ornek = new();
+                ornek.ID = 10;
+                Console.WriteLine(ornek.ID); //10 Yazar
             }
         }
 
